@@ -1,6 +1,6 @@
 # Summary
 
-[Top](../README.md)
+[Top](./index.md)
 - [Terminal](terminal/index.md)
   - [fish --shell](terminal/fish.md)
   - [tmux --terminal-multiplexer](terminal/tmux.md)

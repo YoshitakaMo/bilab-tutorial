@@ -1,0 +1,11 @@
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: book
+  keep-history: false
+  on:
+    branch: master
+env:
+  global:
+    secure: YTH8/bPFbDG0XPVTolIfSUU5AnpO6HRH/Norr9mG9LuwZWtRuWwsOlm9EeInixoZHtZ1XjBFMXoxvpnUFEDS/qs/KzOaP3qgOphsN1fUQvAAUHmWRrRlV8eBKJ7BWXqFQcda9+IlNlImfjCqimdqtKv0gvignlsmeXAwrlbX4B21tqZHar63cMn9OPgjytv9Cj+LbUxRkbEEqGvjfOYhYNVZshjtSBW+k7ZYXXgTimlTaKaNNIPfY+Y/Zbn7L38gR/ewFV163TT6FZw0UPum/2R62QCX3vP36Y+qPLpPiSMNFI1ffFadZtKASY0E39t1BrAqXBmQfOpZAAAOUyEXfdCum6EwISioKtSfMKaWXBk21m9mXOzDk68dzpblkUShQuz/g2yWVLstVHDfIJhZZ2ZIEAZahpwyc627iuPjE0Zg4WJmoLOeulCaTXNdjvaa+jMyfo9FEN0u3sWIfYzJNC0z2SZWKLPTy7ul55h8uyRLN1UziaJtbSAZ4siY5cVQq/p0gtH0cqTcYVKiM7MLAmDmsxtkj3iAPQh2s5D0s7b1eAWcQkIvprb1EzPHsvDyDj9QiboGumQONC0fQOvbysKwF94INExnM0xiXzHxGdguxjvpIdqYnSNNoA4a6psZfdFGRYhULGywPMmLPI4ejV1g7wkAKQVxnn3b/jm7owE=

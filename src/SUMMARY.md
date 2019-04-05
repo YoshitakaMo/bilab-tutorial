@@ -2,6 +2,7 @@
 
 [Top](./index.md)
 - [Terminal](terminal/index.md)
+  - [zsh --shell](terminal/zsh.md)
   - [fish --shell](terminal/fish.md)
   - [tmux --terminal-multiplexer](terminal/tmux.md)
   - [editor](terminal/editor.md)

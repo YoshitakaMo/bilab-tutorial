@@ -9,6 +9,7 @@
 - [Python](python/index.md)
   - [pipenv](python/pipenv.md)
   - [pyenv](python/pyenv.md)
+  - [conda](python/conda.md)
 - [VS Code](vscode/index.md)
   - [settings](vscode/settings.md)
 - [Machine Learning](ml/index.md)

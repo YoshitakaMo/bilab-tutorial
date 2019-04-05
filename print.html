@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>BILAB-Tutorial</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li class="affix"><a href="index.html">Top</a></li><li><a href="terminal/index.html"><strong aria-hidden="true">1.</strong> Terminal</a></li><li><ol class="section"><li><a href="terminal/fish.html"><strong aria-hidden="true">1.1.</strong> fish --shell</a></li><li><a href="terminal/tmux.html"><strong aria-hidden="true">1.2.</strong> tmux --terminal-multiplexer</a></li><li><a href="terminal/editor.html"><strong aria-hidden="true">1.3.</strong> editor</a></li><li><a href="terminal/command.html"><strong aria-hidden="true">1.4.</strong> command</a></li></ol></li><li><a href="python/index.html"><strong aria-hidden="true">2.</strong> Python</a></li><li><ol class="section"><li><a href="python/pipenv.html"><strong aria-hidden="true">2.1.</strong> pipenv</a></li><li><a href="python/pyenv.html"><strong aria-hidden="true">2.2.</strong> pyenv</a></li><li><a href="python/conda.html"><strong aria-hidden="true">2.3.</strong> conda</a></li></ol></li><li><a href="vscode/index.html"><strong aria-hidden="true">3.</strong> VS Code</a></li><li><ol class="section"><li><a href="vscode/settings.html"><strong aria-hidden="true">3.1.</strong> settings</a></li></ol></li><li><a href="ml/index.html"><strong aria-hidden="true">4.</strong> Machine Learning</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">BILAB-Tutorial</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#bilab-tutorial" id="bilab-tutorial"><h1>BILAB Tutorial</h1></a>
+<p>主にラボの新入生がマシンのセットアップを自分でできるようになるためのtutorialです.
+研究室生活においてある程度の環境を揃えておいた方が困った時に助けてもらいやすく, また複数人で作業する時に
+お互いの環境が異なるせいで合わせるのに時間がかかるなどといったことがあると辛いので一つの指針として書きたいと思います.</p>
+<p>レッツ┌(┌ ^o^ )┐ﾗﾎﾞｫｴﾝｼﾞｮｲ</p>
+<a class="header" href="#contribution" id="contribution"><h2>Contribution</h2></a>
+<p>このtutorialは<a href="https://github.com/rust-lang-nursery/mdBook">mdbook</a>で運用しています.</p>
+<p>ラボ外に公開できるTipsなどを増やしていけるといいですね.</p>
+<p>追記してくれる方はmdbookをインストールしたのち, このリポジトリをforkしてください.
+<code>SUMMARY.md</code>に追加したいページを記入して新たなページを作っていきましょう.</p>
+<a class="header" href="#terminal" id="terminal"><h1>Terminal</h1></a>
+<a class="header" href="#fish" id="fish"><h1>fish</h1></a>
+<a class="header" href="#tmux" id="tmux"><h1>tmux</h1></a>
+<a class="header" href="#editor" id="editor"><h1>editor</h1></a>
+<a class="header" href="#command" id="command"><h1>command</h1></a>
+<a class="header" href="#python環境構築編" id="python環境構築編"><h1>Python環境構築編</h1></a>
+<p>研究室に所属して一番初めに触る言語がPythonだと思うのでPythonの環境構築を進めていきます.</p>
+<p>インターネットを検索するとPythonの環境構築方法がたくさん出てきますが, 初めての場合どれを参考にすれば良いかわからず,
+挙句様々なソースから切りはりして持ってくるということをしてしまいかねないので偏りはあるとは思いますが一つの例としての環境構築を示してみたいと思います.</p>
+<p>これは一つの正解であって絶対ではないので, 慣れてきてもっとこうしたいとかこういうやり方の方が良いと思えるものができてきたらそちらにシフトしていきましょう.</p>
+<p>まずは使えるPython本体をがないことには始まらないのでインストールしていきましょう.</p>
+<a class="header" href="#install" id="install"><h1>Install</h1></a>
+<p>for Mac 🍎</p>
+<pre><code class="language-fish">❯ brew install python
+</code></pre>
+<p>for Ubuntu18.04 🐧</p>
+<p>デフォルトで入ってる...気がする.</p>
+<pre><code class="language-fish">❯ python --version
+</code></pre>
+<p>このコマンドで3.6以上の数字が返ってきたら大丈夫です. 次に進みましょう.</p>
+<a class="header" href="#pipenv" id="pipenv"><h1>pipenv</h1></a>
+<p>Pythonの環境を作りたいなら1番に考えるべきものはこれから紹介する<a href="https://github.com/pypa/pipenv">pipenv</a>です.</p>
+<p>pipenvはプロジェクト毎に仮想環境というものを作っていくのですが, 取り敢えず仮想環境はわからなくても良いです. 別の機会に理解していきましょう.</p>
+<p>今回これをオススメするのは今後半年後, 1年後自分が見直す時, また卒業して後進にプロジェクトを引き継ぐ際に非常に楽になるためです.</p>
+<p>私が学部4年でとあるプロジェクトを引き継いだ時, 悲惨な目にあったのでそうならないようはじめから意識していきましょう.</p>
+<a class="header" href="#install-1" id="install-1"><h2>Install</h2></a>
+<p>for Mac 🍎</p>
+<pre><code class="language-fish">❯ brew install pipenv
+</code></pre>
+<p>for Ubuntu18.04 🐧</p>
+<pre><code class="language-fish">❯ sudo pip install --user pipenv
+</code></pre>
+<a class="header" href="#usage" id="usage"><h2>Usage</h2></a>
+<p>新入生課題をPythonで解くことを考えましょう.
+まずは適当な作業ディレクトリを作成し, そこに環境を整えていきます.</p>
+<pre><code class="language-fish">❯ mkdir new_comer_works; and cd new_comer_works
+❯ pipenv install numpy jupyter sklearn matplotlib
+</code></pre>
+<p>上記のコマンドでnew_comer_worksディレクトリ以下にはPipfileとPipfile.lockという二つのファイルが生成されていると思います.
+しばらくはこれらのファイルは必要ないのでそのままにしておきましょう.</p>
+<p>今回インストールしたライブラリを使いたい時には仮想環境というものの中に入る必要があります.</p>
+<pre><code class="language-fish">❯ pipenv shell
+.venv ❯
+</code></pre>
+<p>このコマンドで入るとプロンプトが二行目のように変化すると思います. この状態でpythonを起動すると先ほど入れたライブラリを呼び出すことができます.
+この仮想環境から出るためには<code>Ctrl+D</code>を押すことによって抜けることができます.</p>
+<p>もう一つ仮想環境に入る方法があり, こちらの方法はコマンドごとに仮想環境に入って実行して抜けるといった動作をするものになります.</p>
+<pre><code class="language-fish">❯ pipenv run python
+</code></pre>
+<p>ある実行ファイル<code>hoge.py</code>を引数<code>--foo=bar</code>で実行したい場合にも先頭にpipenv runをつけるだけで,</p>
+<pre><code class="language-fish">❯ pipenv run python hoge.py --foo bar
+</code></pre>
+<p>で実行することができます.</p>
+<a class="header" href="#pipenv環境の再現" id="pipenv環境の再現"><h2>pipenv環境の再現</h2></a>
+<p>Pythonのパッケージは日々更新されているものも多く, 今最新のライブラリを使っていたとしても時が経てば古くなってしまいます. さらに個々のパッケージは他のパッケージとの整合性に関係なくそれぞれ更新されていってしまいます.
+これがどういう自体をもたらすかというと, 今現在動いているスクリプトも将来的には動かなくなってしまうかもしれない危険性があるということを意味します.
+自分用の書き捨てのスクリプトならいざ知らず, 研究室に残るプログラムであれば後進がぐちゃぐちゃの依存関係を解決するなんてもってのほかです.
+そのため自分が書いたスクリプトに責任を持つようにしましょう.</p>
+<p>そこで今回用いるのが<code>Pipfile.lock</code>です.
+Pipfile.lockにはpipenv installしたときに実際にインストールされたパッケージのバージョン情報が記されています.
+このファイルは自分で編集することは決してないのですが, このファイルのおかげで他の人のPCであったり, 自分のPCに新しく同じ環境を用意したりすることが容易にできるようになります.</p>
+<pre><code class="language-fish">❯ ls  # Pipfile.lock ...
+❯ pipenv sync
+</code></pre>
+<p>これで実験した当時のPython環境が再現されます.
+人とのやり取りはもちろんですが, 過去の自分とのやり取りで苦労することのないよう,
+このような技があることを覚えておくと良いでしょう.</p>
+<a class="header" href="#try" id="try"><h2>Try!</h2></a>
+<ul>
+<li>pipenvを使った仮想環境からJupyter notebookを起動してみましょう.</li>
+</ul>
+<a class="header" href="#pyenv" id="pyenv"><h1>pyenv</h1></a>
+<p><a href="https://github.com/pyenv/pyenv">pyenv</a>はPython本体ののバージョン管理をするツールです.
+2019年現在, 流石にPython2を使うことがあるとは思いたくありませんが,
+Python2.7, 3.5, 3.6, 3.7といった複数のバージョンを使わなければならない場面も出てくるかもしれません.</p>
+<p>基本的にPythonのバージョンは3.7を使っていきたいところですが, プロジェクトが依存するライブラリが3.6までしか対応していないだとか,
+そもそもPython2.7から移行するつもりのないライブラリさえ存在しています.
+普通に考えてそのようなライブラリは淘汰されるべきなのですが, 使わなければならない事情もあるでしょう.</p>
+<p>そうなったらpyenvの出番です. ただし, まずはpyenvを使わずに実現できないか熟慮し, どうしても必要な時のみ導入するようにしましょう.</p>
+<a class="header" href="#install-2" id="install-2"><h2>Install</h2></a>
+<p>for Mac 🍎, Ubuntu18.04 🐧</p>
+<pre><code class="language-fish">❯ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+</code></pre>
+<p>本体をインストールしたら環境変数を設定しましょう.</p>
+<pre><code class="language-fish">❯ echo 'export PYENV_ROOT=&quot;$HOME/.pyenv&quot;' &gt;&gt; ~/.bashrc
+❯ echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &gt;&gt; ~/.bashrc
+❯ echo 'status --is-interactive; and . (pyenv init - | psub)' &gt;&gt; ~/.config/fish/config.fish
+</code></pre>
+<a class="header" href="#usage-1" id="usage-1"><h2>Usage</h2></a>
+<p>ここでは競技プログラミングのAtcoderが提供する環境であるPython3.4.3をインストールしてみましょう.
+ちなみにこのバージョンは非常に古いため, 特定用途以外には決して利用しないでください.
+では, 適当な作業ディレクトリを作成していきましょう.</p>
+<pre><code class="language-fish">❯ mkdir competitive_programming; and cd competitive_programming
+❯ pipenv install --python 3.4.3
+</code></pre>
+<p>このように1度pyenvをインストールしてしまえばpipenvからPythonのバージョンを指定することができるので,
+その後あまりpyenvを意識することなく使えてしまうので便利です.</p>
+<p>ただし, pyenvに関しては個人で実験, 開発をする場合には必要のないことがほとんどですので,
+よく考えて導入しましょう.</p>
+<a class="header" href="#conda" id="conda"><h1>conda</h1></a>
+<p>condaも使うことがあると思うので一応紹介しておきます.
+<a href="https://docs.conda.io/en/latest/miniconda.html">conda</a>は先に紹介した<code>pipenv</code>, <code>pyenv</code>を統合した仮想環境のようなものです.
+そのため, これらのツールとは相性があまり良くなく, condaを使うならこれ一つにしていきましょう.</p>
+<p>condaを使う場面は限られていて, condaでないとインストールが難しい, できないライブラリを利用する場合のみです.
+というのもcondaは諸悪の根源で, 突如として環境が破壊されることが多く, 非常に扱いにくいからです.
+また, condaで入れたnumpyが速いという話もありますが, それを期待して入れるくらいならおとなしく<code>Julia</code>か<code>Rust</code>を書きましょう.</p>
+<p>ということでcondaを入れる際には細心の注意を払うようにしましょう.</p>
+<a class="header" href="#install-3" id="install-3"><h2>Install</h2></a>
+<p>for Mac 🍎, Ubuntu18.04 🐧</p>
+<pre><code class="language-fish">❯ wget https://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
+❯ bash ~/miniconda.sh -b -p $HOME/miniconda
+❯ echo 'source (conda info --root)/etc/fish/conf.d/conda.fish' &gt;&gt; ~/.config/fish/config.fish
+</code></pre>
+<a class="header" href="#usage-2" id="usage-2"><h2>Usage</h2></a>
+<p>まずはじめに仮想環境を作りましょう. 今回は適当に<code>practice</code>という名前にします.</p>
+<pre><code class="language-fish">❯ conda create -n practice python=3.7
+</code></pre>
+<p>condaの仮想環境はこれで作成されるので, 次に仮想環境に入ってパッケージを追加していきましょう.</p>
+<pre><code class="language-fish">❯ conda activate practice  # conda環境の有効化
+❯ conda install jupyter ...  # 必要なパッケージのインストール
+</code></pre>
+<p>condaを使うとpipとは違う場所からパッケージをダウンロードし, 依存関係などをよしなにしてくれるので基本的に<code>conda install</code>コマンドを用います.
+ただ, 中にはcondaでは提供しておらず, pipでないとインストールできないものもあるのでそのような場合にはconda環境が有効になっていることを確認したのち,
+<code>pip install</code>のコマンドでインストールすることができます.
+この辺りは環境が壊れやすい操作ですので注意して行いましょう.</p>
+<p>condaで管理したPythonを利用する場合には, パッケージの追加のときと同様,
+condaを有効化したのち, pythonの環境を立ち上げることで可能となります.</p>
+<p>また, conda環境から抜ける場合には次のコマンドを実行して下さい.</p>
+<pre><code class="language-fish">❯ conda deactivate
+</code></pre>
+<a class="header" href="#vs-code" id="vs-code"><h1>VS Code</h1></a>
+<a class="header" href="#settings" id="settings"><h1>settings</h1></a>
+<a class="header" href="#machine-learning" id="machine-learning"><h1>Machine Learning</h1></a>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

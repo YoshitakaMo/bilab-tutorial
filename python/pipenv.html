@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>pipenv - BILAB-Tutorial</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li class="affix"><a href="../index.html">Top</a></li><li><a href="../terminal/index.html"><strong aria-hidden="true">1.</strong> Terminal</a></li><li><ol class="section"><li><a href="../terminal/fish.html"><strong aria-hidden="true">1.1.</strong> fish --shell</a></li><li><a href="../terminal/tmux.html"><strong aria-hidden="true">1.2.</strong> tmux --terminal-multiplexer</a></li><li><a href="../terminal/editor.html"><strong aria-hidden="true">1.3.</strong> editor</a></li><li><a href="../terminal/command.html"><strong aria-hidden="true">1.4.</strong> command</a></li></ol></li><li><a href="../python/index.html"><strong aria-hidden="true">2.</strong> Python</a></li><li><ol class="section"><li><a href="../python/pipenv.html" class="active"><strong aria-hidden="true">2.1.</strong> pipenv</a></li><li><a href="../python/pyenv.html"><strong aria-hidden="true">2.2.</strong> pyenv</a></li><li><a href="../python/conda.html"><strong aria-hidden="true">2.3.</strong> conda</a></li></ol></li><li><a href="../vscode/index.html"><strong aria-hidden="true">3.</strong> VS Code</a></li><li><ol class="section"><li><a href="../vscode/settings.html"><strong aria-hidden="true">3.1.</strong> settings</a></li></ol></li><li><a href="../ml/index.html"><strong aria-hidden="true">4.</strong> Machine Learning</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">BILAB-Tutorial</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#pipenv" id="pipenv"><h1>pipenv</h1></a>
+<p>Pythonの環境を作りたいなら1番に考えるべきものはこれから紹介する<a href="https://github.com/pypa/pipenv">pipenv</a>です.</p>
+<p>pipenvはプロジェクト毎に仮想環境というものを作っていくのですが, 取り敢えず仮想環境はわからなくても良いです. 別の機会に理解していきましょう.</p>
+<p>今回これをオススメするのは今後半年後, 1年後自分が見直す時, また卒業して後進にプロジェクトを引き継ぐ際に非常に楽になるためです.</p>
+<p>私が学部4年でとあるプロジェクトを引き継いだ時, 悲惨な目にあったのでそうならないようはじめから意識していきましょう.</p>
+<a class="header" href="#install" id="install"><h2>Install</h2></a>
+<p>for Mac 🍎</p>
+<pre><code class="language-fish">❯ brew install pipenv
+</code></pre>
+<p>for Ubuntu18.04 🐧</p>
+<pre><code class="language-fish">❯ sudo pip install --user pipenv
+</code></pre>
+<a class="header" href="#usage" id="usage"><h2>Usage</h2></a>
+<p>新入生課題をPythonで解くことを考えましょう.
+まずは適当な作業ディレクトリを作成し, そこに環境を整えていきます.</p>
+<pre><code class="language-fish">❯ mkdir new_comer_works; and cd new_comer_works
+❯ pipenv install numpy jupyter sklearn matplotlib
+</code></pre>
+<p>上記のコマンドでnew_comer_worksディレクトリ以下にはPipfileとPipfile.lockという二つのファイルが生成されていると思います.
+しばらくはこれらのファイルは必要ないのでそのままにしておきましょう.</p>
+<p>今回インストールしたライブラリを使いたい時には仮想環境というものの中に入る必要があります.</p>
+<pre><code class="language-fish">❯ pipenv shell
+.venv ❯
+</code></pre>
+<p>このコマンドで入るとプロンプトが二行目のように変化すると思います. この状態でpythonを起動すると先ほど入れたライブラリを呼び出すことができます.
+この仮想環境から出るためには<code>Ctrl+D</code>を押すことによって抜けることができます.</p>
+<p>もう一つ仮想環境に入る方法があり, こちらの方法はコマンドごとに仮想環境に入って実行して抜けるといった動作をするものになります.</p>
+<pre><code class="language-fish">❯ pipenv run python
+</code></pre>
+<p>ある実行ファイル<code>hoge.py</code>を引数<code>--foo=bar</code>で実行したい場合にも先頭にpipenv runをつけるだけで,</p>
+<pre><code class="language-fish">❯ pipenv run python hoge.py --foo bar
+</code></pre>
+<p>で実行することができます.</p>
+<a class="header" href="#pipenv環境の再現" id="pipenv環境の再現"><h2>pipenv環境の再現</h2></a>
+<p>Pythonのパッケージは日々更新されているものも多く, 今最新のライブラリを使っていたとしても時が経てば古くなってしまいます. さらに個々のパッケージは他のパッケージとの整合性に関係なくそれぞれ更新されていってしまいます.
+これがどういう自体をもたらすかというと, 今現在動いているスクリプトも将来的には動かなくなってしまうかもしれない危険性があるということを意味します.
+自分用の書き捨てのスクリプトならいざ知らず, 研究室に残るプログラムであれば後進がぐちゃぐちゃの依存関係を解決するなんてもってのほかです.
+そのため自分が書いたスクリプトに責任を持つようにしましょう.</p>
+<p>そこで今回用いるのが<code>Pipfile.lock</code>です.
+Pipfile.lockにはpipenv installしたときに実際にインストールされたパッケージのバージョン情報が記されています.
+このファイルは自分で編集することは決してないのですが, このファイルのおかげで他の人のPCであったり, 自分のPCに新しく同じ環境を用意したりすることが容易にできるようになります.</p>
+<pre><code class="language-fish">❯ ls  # Pipfile.lock ...
+❯ pipenv sync
+</code></pre>
+<p>これで実験した当時のPython環境が再現されます.
+人とのやり取りはもちろんですが, 過去の自分とのやり取りで苦労することのないよう,
+このような技があることを覚えておくと良いでしょう.</p>
+<a class="header" href="#try" id="try"><h2>Try!</h2></a>
+<ul>
+<li>pipenvを使った仮想環境からJupyter notebookを起動してみましょう.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../python/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../python/pyenv.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../python/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../python/pyenv.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -6,6 +6,8 @@
 先に紹介した`vim`や`emacs`もエディタの一つであり, これを使いこなすことがスーパープログラマの第一歩なのですが,
 人によってはこれらを使いこなすのが難しかったりするのでこれから紹介する[Visual Studio Code](https://code.visualstudio.com/)をお勧めします.
 
+![](./image/vsc_overview.png)
+
 ## Install
 
 for Mac 🍎

@@ -13,4 +13,6 @@
   - [conda](python/conda.md)
 - [VS Code](vscode/index.md)
   - [settings](vscode/settings.md)
+  - [plugins](vscode/plugins.md)
+  - [python](vscode/python.md)
 - [Machine Learning](ml/index.md)
